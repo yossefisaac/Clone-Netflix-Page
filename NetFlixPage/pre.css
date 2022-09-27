@@ -1,0 +1,196 @@
+:root {
+  --primary: #141414;
+  --light: #F3F3F3;
+  --dark: 	#686868;
+}
+
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+  color: var(--light);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disppear {
+  animation: vanish 3s forwards;
+  transition: all 1s;
+}
+@keyframes vanish {
+  100%{
+    opacity: 2;
+    visibility: hidden;
+    transition: all 1s;
+  }
+}
+.loader img{
+  width: 100%;
+}
+
+header {
+  padding: 20px 20px 0 20px;
+  position: fixed;
+  top: 0;
+  display: grid;  
+  grid-gap:5px;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: 
+   "nt mn mn sb . . . "; 
+  background-color: var(--primary);
+  width: 100%;
+  margin-bottom: 0px;  
+}
+
+.netflixLogo {
+  grid-area: nt;
+  object-fit: cover;
+  width: 100px;
+  max-height: 100%;
+  
+  padding-left: 30px;
+  padding-top: 0px;  
+}
+
+.netflixLogo img {  
+  height: 35px;     
+}
+
+#logo {
+  color: #E50914;  
+  margin: 0; 
+  padding: 0; 
+}
+
+
+.main-nav {
+  grid-area: mn;
+  padding: 0 50px 0 40px;
+}
+
+.main-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;  
+}
+
+.main-nav a:hover {
+  color: var(--dark);
+}
+
+.sub-nav {
+  grid-area: sb;
+  padding: 0 50px 0 40px;
+}
+
+.sub-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;
+}
+
+.sub-nav a:hover {
+  color: var(--dark);
+}
+
+h1 {
+  padding-top: 60px;  
+}
+
+ .main-container {
+  padding: 50px;
+}
+
+.box {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+.box a {
+  transition: transform .3s;  
+}
+
+.box a:hover {
+  transition: transform .3s;
+  -ms-transform: scale(1.4);
+  -webkit-transform: scale(1.4);  
+  transform: scale(1.4);
+}
+
+.box img {
+  border-radius: 2px;
+}
+
+
+
+ .wrapper {
+  margin-top: 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 100%);
+  overflow: hidden;
+  scroll-behavior: smooth;
+ }
+ .wrapper section {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  margin: 20px 0;
+ }
+ .wrapper section .item {
+  padding: 0 2px;
+  transition: 250ms all;
+ }
+ .wrapper section .item:hover {
+  margin: 0 40px;
+  transform: scale(1.2);
+ }
+ .wrapper section a {
+  position: absolute;
+  color: #fff;
+  text-decoration: none;
+  font-size: 6em;
+  background: black;
+  width: 80px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+ }
+ .wrapper section a:nth-of-type(1) {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+ }
+ .wrapper section a:nth-of-type(2) {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+ }
+ @media only screen and (max-width: 600px) {
+  a.arrow__btn {
+  display: none;
+  }
+ }
